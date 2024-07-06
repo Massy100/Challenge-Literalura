@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Listar libros registrados</title>
+    <title>Listado de Libros</title>
 </head>
 <body>
-    <h1>Listar libros registrados</h1>
-    <div th:if="${books}">
-        <pre th:text="${books}"></pre>
-    </div>
-    <a href="/">Volver al menú principal</a>
+    <h1>Listado de Libros</h1>
+    <ul>
+        <!-- Iterar sobre los libros y mostrar título y autores -->
+        <li th:each="book : ${books.results}">
+            <h2 th:text="${book.title}"></h2>
+            <p>Autores:</p>
+            <ul>
+                <li th:each="author : ${book.authors}" th:text="${author.name} + ' (' + ${author.birth_year} + '-' + ${author.death_year} + ')'"></li>
+            </ul>
+            <hr/>
+        </li>
+    </ul>
 </body>
 </html>
-
