@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar libros registrados</title>
+</head>
+<body>
+    <h1>Listar libros registrados</h1>
+    <div th:if="${books}">
+        <pre th:text="${books}"></pre>
+    </div>
+    <a href="/">Volver al menú principal</a>
+</body>
+</html>
+

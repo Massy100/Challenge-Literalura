@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar libro por título</title>
+</head>
+<body>
+    <h1>Buscar libro por título</h1>
+    <form action="/buscar-libro" method="get">
+        <input type="text" name="title" placeholder="Título del libro">
+        <button type="submit">Buscar</button>
+    </form>
+    <div th:if="${books}">
+        <h2>Resultados:</h2>
+        <pre th:text="${books}"></pre>
+    </div>
+    <a href="/">Volver al menú principal</a>
+</body>
+</html>
